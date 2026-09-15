@@ -12,12 +12,17 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from config import BOT_TOKEN
 # Импортируем роутер из обработчиков
 from handlers import router # Убедитесь, что здесь импортируется ваш основной роутер из handlers.py
+# Импортируем функции базы данных
+from database import init_db
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 async def main():
     """Основная функция запуска бота."""
+    # --- Инициализация базы данных ---
+    init_db()
+    
     # --- Создаем хранилище для FSM ---
     storage = MemoryStorage()
 
