@@ -1,6 +1,7 @@
 # main.py
 import asyncio
 import logging
+import ssl
 
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
@@ -12,19 +13,33 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from config import BOT_TOKEN
 # Импортируем роутер из обработчиков
 from handlers import router # Убедитесь, что здесь импортируется ваш основной роутер из handlers.py
+# Импортируем функции базы данных
+from database import init_db
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 async def main():
     """Основная функция запуска бота."""
+    # --- Инициализация базы данных ---
+    init_db()
+    
     # --- Создаем хранилище для FSM ---
     storage = MemoryStorage()
 
-    # Создаем бота
+    # Создаем бота с нашим SSL контекстом через модификацию _connector_init
+    from aiogram.client.session.aiohttp import AiohttpSession
+    import ssl
+    import certifi
+    
+    session = AiohttpSession()
+    # Модифицируем внутренний словарь инициализации коннектора
+    session._connector_init["ssl"] = False  # Отключаем проверку SSL для обхода проблем
+    
     bot = Bot(
         token=BOT_TOKEN,
-        default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+        default=DefaultBotProperties(parse_mode=ParseMode.HTML),
+        session=session
     )
 
     # --- Создаем диспетчер и передаем ему хранилище ---

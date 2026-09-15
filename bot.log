@@ -1,0 +1,15 @@
+2026-09-15 20:43:34,153 - INFO - Webhook удален (если был). Начинаем polling...
+2026-09-15 20:43:34,154 - INFO - Start polling
+2026-09-15 20:43:34,317 - INFO - Run polling for bot @legendargame_bot id=7901689744 - 'legendarbot'
+2026-09-15 20:43:38,651 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-15 20:43:38,651 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7901689744)
+2026-09-15 20:43:44,170 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-15 20:43:44,170 - WARNING - Sleep for 1.211062 seconds and try again... (tryings = 1, bot id = 7901689744)
+2026-09-15 20:43:50,164 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-15 20:43:50,164 - WARNING - Sleep for 1.546324 seconds and try again... (tryings = 2, bot id = 7901689744)
+2026-09-15 20:43:56,921 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-15 20:43:56,921 - WARNING - Sleep for 2.075205 seconds and try again... (tryings = 3, bot id = 7901689744)
+2026-09-15 20:44:03,327 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-15 20:44:03,328 - WARNING - Sleep for 2.670239 seconds and try again... (tryings = 4, bot id = 7901689744)
+2026-09-15 20:44:10,329 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-15 20:44:10,330 - WARNING - Sleep for 3.520162 seconds and try again... (tryings = 5, bot id = 7901689744)
