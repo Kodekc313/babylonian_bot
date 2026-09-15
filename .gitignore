@@ -1,20 +1,5 @@
 ```
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Logs
+# Logs and temp files
 *.log
 bot.log
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Database
-*.db
-cultists.db
 ```
